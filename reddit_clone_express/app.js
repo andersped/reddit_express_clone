@@ -162,7 +162,7 @@ app.delete("/posts/:id", routeMiddleware.ensureLoggedIn, function(req,res){
 
 //Index 
 		//Not needed because don't need comments to have its own page and don't want it to show up in the /posts index page
-app.get("/posts/:author_id/comments", function(req,res){
+app.get("/posts/:post_id/comments", function(req,res){
 	db.Post.findById(req.params.post_id,
 		function (err, post){
 			res.render("comments/index", {post:post});
