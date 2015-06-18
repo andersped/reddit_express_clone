@@ -1,0 +1,18 @@
+<% include ../partials/header %>
+<h1>Here are the Posts!</h1>
+    <p>
+      <%= comment.name%> said:
+    </p>
+    <p>  
+      <%= comment.voice%>
+     </p>
+      <a href="/posts/<%= comment.post%>/comments/<%= comment._id%>/edit">Edit</a>
+
+      <form action="/posts/<%= comment.post%>/comments/<%= comment._id%>?_method=DELETE" method="POST">
+        <input type="submit" value="DELETE">
+      </form>
+    </p>
+
+
+
+<% include ../partials/footer %>

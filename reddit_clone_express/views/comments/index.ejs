@@ -1,0 +1,22 @@
+<% include ../partials/header %>
+
+<h1><%= comment.name%>'s Comments</h1>
+  <% post.comments.forEach(function(comment){ %>
+    <p>
+      <a href="/posts/<%= post._id%>/comment/<%= comment._id%>">See More</a>
+      <%= comment.voice%>
+    </p>
+  <% })%>
+  <a href="/posts/<%= post.id%>/comments/new">Add a new Comment!</a>
+  <p>
+    <a href="/posts/<%= post._id%>/edit">Edit this Post</a>
+  </p>
+  <p>
+    <a href="/posts">See All Posts</a>
+  </p>
+
+
+
+
+
+<% include ../partials/footer %>

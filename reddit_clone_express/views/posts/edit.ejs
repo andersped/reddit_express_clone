@@ -1,0 +1,27 @@
+<% include ../partials/header %>
+
+<h1>Look at your Posts!</h1>
+    <p>
+
+      <form action="/posts/<%= post._id%>?_method=put" method="POST">
+      <div>
+         <label for="title">Title:</label>
+         <input autofocus type="text" name="title" id="title" value = <%= post.title%>>
+       </div>
+       <div>
+          <label for="info">Post:</label>
+          <input autofocus type="text" name="info" id="info" value = <%= post.info%>>
+        </div>
+        <div>
+          <label for="url">Article Link:</label>
+          <input autofocus type="text" name="url" id="url" value = <%= post.url%>>
+        </div>
+       <div>
+         <input type="submit" value="Update">
+       </div>
+      </form>
+    </p>
+
+
+
+<% include ../partials/footer %>

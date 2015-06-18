@@ -1,0 +1,35 @@
+<% include ../partials/header %>
+
+<h1>Look at this Post!</h1>
+  <p>
+    <%= post.title%> Post:
+	<p>
+    <%= post.info%>
+    </p>
+    <p>
+	<%= post.url%>
+    </p>
+    <% comments.forEach(function(comment){ %>
+      <p>
+        <a href="/posts/<%= post.id%>/comments/<%= comment.id%>"><%= comment.name%> said:</a>
+        <%= comment.voice%>
+
+      </p>
+    <% })%>
+  </p>
+  <p>
+      <a href="/posts/<%= post._id%>/comments/new">Add a Comment</a>
+  </p>
+  <p>
+    <a href="/posts/<%= post._id%>/edit">Edit this Post</a>
+    <form action="/posts/<%= post._id%>?_method=DELETE" method="POST">
+      <input type="submit" value="DELETE">
+    </form>
+  </p>
+  <p>
+    <a href="/posts">See all Posts</a>
+  </p>
+
+
+
+  <% include ../partials/footer %>
